@@ -1,4 +1,3 @@
-import { useColorScheme } from "@/src/hooks/use-color-scheme.web";
 import {
   DarkTheme,
   DefaultTheme,
@@ -8,6 +7,7 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "../global.css";
+import { useColorScheme } from "../shared/hooks/use-color-scheme.web";
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
