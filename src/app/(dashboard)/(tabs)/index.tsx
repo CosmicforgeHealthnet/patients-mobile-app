@@ -38,17 +38,18 @@ export default function Dashboard() {
           /> */}
           <AvatarFallback className="bg-primary">Ajogu Joseph</AvatarFallback>
         </Avatar>
-        <View className="gap-2 mb-8">
+        <View className="gap-2 ">
           <Text className="text-xl font-bold font-Poppins">Hi Kelly,</Text>
           <Text className="text-md ">How are you feeling today?</Text>
         </View>
       </View>
-      <SearchInput />
-      <ScrollView className="mt-8 flex-1">
+
+      <ScrollView className="mt-2 flex-1" showsVerticalScrollIndicator={false}>
+        <SearchInput />
         {/* Header Section */}
-        <View className="">
+        <View className="mt-5">
           {/* Upcoming Appointment Card */}
-          <Card className="bg-blue-600 border-0 mb-6">
+          <Card className="!bg-primary border-0 mb-6">
             <CardContent className="p-4">
               <Text className="text-white text-sm mb-2">
                 Upcoming Appointment
