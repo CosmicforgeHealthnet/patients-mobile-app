@@ -1,17 +1,15 @@
-import { ThemedText } from "@/src/shared/components/themed-text";
-import { ThemedView } from "@/src/shared/components/themed-view";
 import { Link } from "expo-router";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 // Dummy drawer screen
 export default function Dashboard() {
   return (
-    <ThemedView style={styles.container}>
-      <ThemedText>This is the Prescription Drawer screen</ThemedText>
+    <View style={styles.container}>
+      <Text>This is the Prescription Drawer screen</Text>
       <Link href="\" style={styles.link}>
-        <ThemedText>Log out</ThemedText>
+        <Text>Log out</Text>
       </Link>
-    </ThemedView>
+    </View>
   );
 }
 

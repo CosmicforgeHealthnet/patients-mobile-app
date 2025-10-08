@@ -1,17 +1,16 @@
-import { ThemedText } from "@/src/shared/components/themed-text";
-import { ThemedView } from "@/src/shared/components/themed-view";
 import { Link } from "expo-router";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login() {
   return (
     <SafeAreaView>
-      <ThemedView>
-        <ThemedText>Login Screen</ThemedText>
+      <View>
+        <Text>Login Screen</Text>
         <Link href={"/register"}>
-          <ThemedText>Register</ThemedText>
+          <Text>Register</Text>
         </Link>
-      </ThemedView>
+      </View>
     </SafeAreaView>
   );
 }

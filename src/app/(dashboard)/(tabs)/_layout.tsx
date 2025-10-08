@@ -1,8 +1,13 @@
 import { HapticTab } from "@/src/shared/components/haptic-tab";
-import { IconSymbol } from "@/src/shared/components/ui/icon-symbol";
-import { Colors } from "@/src/shared/constants/theme";
 import { useColorScheme } from "@/src/shared/hooks/use-color-scheme.web";
 import { Tabs } from "expo-router";
+import {
+  Bell,
+  CalendarDaysIcon,
+  Home,
+  MessageCircle,
+  User,
+} from "lucide-react-native";
 import React from "react";
 
 export default function TabLayout() {
@@ -14,7 +19,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: "#272ea7",
         headerShown: false,
         tabBarButton: HapticTab,
       }}
@@ -23,18 +28,35 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="messages"
         options={{
-          title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
+          title: "Messages",
+          tabBarIcon: ({ color }) => <MessageCircle color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="appointments"
+        options={{
+          title: "Appointments",
+          tabBarIcon: ({ color }) => <CalendarDaysIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="notifications"
+        options={{
+          title: "Notifications",
+          tabBarIcon: ({ color }) => <Bell color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color }) => <User color={color} />,
         }}
       />
       {/* Hide screens so it doesn't appear as a tab */}
