@@ -61,6 +61,7 @@ export default function TabLayout() {
       />
       {/* Hide screens so it doesn't appear as a tab */}
       {/* you can hide the screens you don't want to be visible in the bottom tab here */}
+      {/* <Tabs.Screen name="referAndEarn" options={{ href: null }} /> */}
       <Tabs.Screen name="hiddenTab" options={{ href: null }} />
     </Tabs>
   );

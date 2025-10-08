@@ -104,53 +104,59 @@ export default function Dashboard() {
           </Card>
 
           {/* Health Metrics */}
-          <View className="flex-row gap-3 mb-6">
-            <Card className="flex-1">
-              <CardContent className="p-4 items-center">
-                <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center mb-2">
-                  <Droplets size={24} color="#EC4899" />
-                </View>
-                <Text className="text-xs text-gray-600 mb-1">
-                  Blood Pressure
-                </Text>
-                <Text className="font-bold text-gray-900">120/80</Text>
-                <Text className="text-xs text-gray-500">mmHg</Text>
-              </CardContent>
-            </Card>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            className=" mb-6"
+          >
+            <View className="flex flex-row gap-3">
+              <Card className="flex-1">
+                <CardContent className="p-4 items-center">
+                  <View className="w-12 h-12 bg-pink-100 rounded-full items-center justify-center mb-2">
+                    <Droplets size={24} color="#EC4899" />
+                  </View>
+                  <Text className="text-xs text-gray-600 mb-1">
+                    Blood Pressure
+                  </Text>
+                  <Text className="font-bold text-gray-900">120/80</Text>
+                  <Text className="text-xs text-gray-500">mmHg</Text>
+                </CardContent>
+              </Card>
 
-            <Card className="flex-1">
-              <CardContent className="p-4 items-center">
-                <View className="w-12 h-12 bg-red-100 rounded-full items-center justify-center mb-2">
-                  <Heart size={24} color="#EF4444" />
-                </View>
-                <Text className="text-xs text-gray-600 mb-1">Heart Rate</Text>
-                <Text className="font-bold text-gray-900">82</Text>
-                <Text className="text-xs text-gray-500">/min</Text>
-              </CardContent>
-            </Card>
+              <Card className="flex-1">
+                <CardContent className="p-4 items-center">
+                  <View className="w-12 h-12 bg-red-100 rounded-full items-center justify-center mb-2">
+                    <Heart size={24} color="#EF4444" />
+                  </View>
+                  <Text className="text-xs text-gray-600 mb-1">Heart Rate</Text>
+                  <Text className="font-bold text-gray-900">82</Text>
+                  <Text className="text-xs text-gray-500">/min</Text>
+                </CardContent>
+              </Card>
 
-            <Card className="flex-1">
-              <CardContent className="p-4 items-center">
-                <View className="w-12 h-12 bg-blue-100 rounded-full items-center justify-center mb-2">
-                  <Activity size={24} color="#3B82F6" />
-                </View>
-                <Text className="text-xs text-gray-600 mb-1">SpO2</Text>
-                <Text className="font-bold text-gray-900">98%</Text>
-              </CardContent>
-            </Card>
+              <Card className="flex-1">
+                <CardContent className="p-4 items-center">
+                  <View className="w-12 h-12 bg-blue-100 rounded-full items-center justify-center mb-2">
+                    <Activity size={24} color="#3B82F6" />
+                  </View>
+                  <Text className="text-xs text-gray-600 mb-1">SpO2</Text>
+                  <Text className="font-bold text-gray-900">98%</Text>
+                </CardContent>
+              </Card>
 
-            <Card className="flex-1">
-              <CardContent className="p-4 items-center">
-                <View className="w-12 h-12 bg-green-100 rounded-full items-center justify-center mb-2">
-                  <Thermometer size={24} color="#10B981" />
-                </View>
-                <Text className="text-xs text-gray-600 mb-1">
-                  Body Temperature
-                </Text>
-                <Text className="font-bold text-gray-900">36.5°C</Text>
-              </CardContent>
-            </Card>
-          </View>
+              <Card className="flex-1">
+                <CardContent className="p-4 items-center">
+                  <View className="w-12 h-12 bg-green-100 rounded-full items-center justify-center mb-2">
+                    <Thermometer size={24} color="#10B981" />
+                  </View>
+                  <Text className="text-xs text-gray-600 mb-1">
+                    Body Temperature
+                  </Text>
+                  <Text className="font-bold text-gray-900">36.5°C</Text>
+                </CardContent>
+              </Card>
+            </View>
+          </ScrollView>
         </View>
 
         {/* Browse by Specializations */}

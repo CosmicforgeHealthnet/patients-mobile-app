@@ -1,17 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import { DrawerContentScrollView } from "@react-navigation/drawer";
+import { useRouter } from "expo-router";
 import {
-  BriefcaseMedical,
+  Bot,
   CalendarDays,
-  Cross,
-  Droplet,
-  Globe,
+  CircleQuestionMark,
+  FileTextIcon,
+  Gift,
   Home,
-  MessageCircle,
+  Search,
   Settings,
-  User,
-  Users,
-  Video,
 } from "lucide-react-native";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -19,20 +17,30 @@ import { useColorScheme } from "../hooks/use-color-scheme.web";
 import { AvatarFallback, AvatarImage, AvatarWithBadge } from "./ui/Avatar";
 
 const drawerItems = [
-  { icon: Home, label: "Dashboard", route: "Dashboard" },
-  { icon: Users, label: "Find Specialist", route: "FindSpecialist" },
+  { icon: Home, label: "Dashboard", route: "(tabs)" },
+  { icon: FileTextIcon, label: "Health Records", route: "HealthRecords" },
   { icon: CalendarDays, label: "Appointments", route: "Appointments" },
-  { icon: Video, label: "Consultations", route: "Consultations" },
-  { icon: Cross, label: "Pharmacy", route: "Pharmacy" },
-  { icon: BriefcaseMedical, label: "First Aid", route: "FirstAid" },
-  { icon: Droplet, label: "Lab Test", route: "LabTest" },
-  { icon: Globe, label: "Medical Tour", route: "MedicalTour" },
-  { icon: User, label: "Profile", route: "Profile" },
+  { icon: Bot, label: "AI Health Assistant", route: "AIHealthAssistant" },
+  { icon: Search, label: "Explore Doctors", route: "ExploreDoctors" },
   { icon: Settings, label: "Settings", route: "Settings" },
-  { icon: MessageCircle, label: "Support", route: "Support" },
+  { icon: Gift, label: "Refer & Earn", route: "referAndEarn/referAndEarn" },
+  {
+    icon: CircleQuestionMark,
+    label: "Help & Support",
+    route: "HelpAndSupport",
+  },
+  // { icon: Users, label: "Find Specialist", route: "FindSpecialist" },
+  // { icon: Video, label: "Consultations", route: "Consultations" },
+  // { icon: Cross, label: "Pharmacy", route: "Pharmacy" },
+  // { icon: BriefcaseMedical, label: "First Aid", route: "FirstAid" },
+  // { icon: Droplet, label: "Lab Test", route: "LabTest" },
+  // { icon: Globe, label: "Medical Tour", route: "MedicalTour" },
+  // { icon: User, label: "Profile", route: "Profile" },
+  // { icon: MessageCircle, label: "Support", route: "Support" },
 ];
 
 const CustomDrawerContent = (props: any) => {
+  const router = useRouter();
   const colorScheme = useColorScheme();
   const activeColor = colorScheme === "dark" ? "#0A84FF" : "#007AFF";
   const inactiveColor = colorScheme === "dark" ? "#A1A1AA" : "#8E8E93";
@@ -72,15 +80,15 @@ const CustomDrawerContent = (props: any) => {
       {/* Navigation Items */}
       <View style={styles.navigationSection}>
         {drawerItems.map((item, index) => {
-          const isActive = props.state.index === index;
-          const color = isActive ? activeColor : inactiveColor;
+          const currentRouteName = props.state.routeNames[props.state.index]; // get active route name
+          const isActive = currentRouteName === item.route;
           const Icon = item.icon;
           return (
             <DrawerItem
               key={index}
               icon={<Icon color={isActive ? "#272ea7" : "black"} />}
               label={item.label}
-              onPress={() => props.navigation.navigate(item.route)}
+              onPress={() => router.navigate(item.route)}
               isActive={isActive}
             />
           );

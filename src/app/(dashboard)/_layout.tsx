@@ -20,7 +20,22 @@ export default function MyDrawer() {
           drawerIcon: <Home />,
           header: () => (
             <CustomHeader
-              title="My Appointments"
+              title=""
+              showNotifications={true}
+              showSearch={false}
+              onNotificationPress={() => console.log("Notifications")}
+            />
+          ),
+        }}
+      />
+      <DrawerLayout.Screen
+        name="referAndEarn/referAndEarn"
+        options={{
+          title: false,
+          headerShown: false,
+          header: () => (
+            <CustomHeader
+              title=""
               showNotifications={true}
               showSearch={false}
               onNotificationPress={() => console.log("Notifications")}
